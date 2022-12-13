@@ -1,0 +1,32 @@
+<div class="row ">
+    <div class=" ">
+      <div class="row">
+        <div class="text-center d-flex justify-content-center pt-5">
+          <h1>Login</h1>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-md-12 d-flex justify-content-center">
+          <form class="" #myForm="ngForm" >
+            <div class="row">
+              <label for="username">Username</label>
+              <input type="text" name="username" #username="ngModel" [(ngModel)]="loginObj.username" autocomplete="off" placeholder="Username" required>
+              <div class="text-danger" *ngIf="password.touched">
+                <span *ngIf="password.errors?.['required']">Required</span>
+              </div>
+            </div>
+            <div class="row">
+              <label for="password">Password</label>
+              <input type="password" #password="ngModel"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" [(ngModel)]="loginObj.password" name="password" required>
+              <div class="text-danger" *ngIf="password.touched">
+                <span *ngIf="password.errors?.['required']">Required</span>
+                <span *ngIf="password.errors?.['pattern']">Minimum one upper case, one numeric value, one special character, minimum one lowercase letter & minimum length of 8characters</span>
+              </div>
+            </div>
+            <button type="button" [disabled]="myForm.invalid" (click)="onLogin()"><div class="spinner-border text-dark" *ngIf="spinner == true"></div>Login</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a routerLink="/dashboard" [ngClass]="activeMenu == 'dashboard'?'active1':''" (click)="setActiveMenu('dashboard')"><i class="fas fa-tachometer-alt" style="font-size:16px; color:#ffbb33; padding-right:20px;" aria-hidden="true"></i>Dashboard</a>
+    <a routerLink="/Employee" [ngClass]="activeMenu == 'employee'?'active1':''" (click)="setActiveMenu('employee')"><i class="fas fa-question-circle" style="font-size:16px;color:#ffbb33; padding-right:20px;"></i>&nbsp;Employee management</a>
+    <a routerLink="/#"  (click)="logout()"><i class='far fa-arrow-alt-circle-right' style='font-size:16px;color:#ffbb33; padding-right:20px;'></i>&nbsp;&nbsp;Logout</a>
+  </div>
+
+  <div id="main">
+    <div class="row">
+      <nav class="navbar navbar-expand-sm bg-warning navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link active" routerLink="#"><span class="text-dark" style="font-size:24px; cursor:pointer;"
+                  (click)="openNav()">&#9776;</span></a>
+            </li>
+            <li class="nav-item pl-3">
+              <a class="nav-link" href="#"><span class="text-dark" style="font-size:24px;cursor:pointer">
+              <img src="#" alt="" height="20">
+              </span></a>
+            </li>
+            <li class="nav-item pl-3">
+              <a class="nav-link" routerLink="/Employee">
+                <span class="text-dark" style="font-size:24px;cursor:pointer">
+
+                </span>
+              </a>
+            </li>
+            <li class="nav-item pl-3">
+              <a class="nav-link" routerLink="#"><span class="text-dark" style="font-size:24px;cursor:pointer">
+            </span></a>
+            </li>
+            <li class="nav-item pl-3 ">
+
+
+            </li>
+
+          </ul>
+          <div class="d-flex justify-content-end">
+            {{logedinUserName}}
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid p-5 ">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+

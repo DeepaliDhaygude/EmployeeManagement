@@ -1,0 +1,28 @@
+{
+  "Employee" : [
+    {
+      "empId" : 1,
+      "empName" : "Deepali",
+      "position" : "Angular Developer",
+      "joiningDate" : "12/05/2021"
+    },
+    {
+      "empId" : 2,
+      "empName" : "Krisha",
+      "position" : "Software Tester",
+      "joiningDate" : "06/30/2022"
+    },
+    {
+      "empId" : 3,
+      "empName" : "Ujjwal",
+      "position" : "Software Tester",
+      "joiningDate" : "01/06/2019"
+    },
+    {
+      "empId" : 4,
+      "empName" : "Shiv",
+      "position" : "Azure Developer",
+      "joiningDate" : "06/26/2020"
+    }
+  ]
+}

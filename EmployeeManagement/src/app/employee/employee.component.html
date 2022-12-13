@@ -1,0 +1,37 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+        <div class="card d-flex justify-content-center">
+            <div class="card-header bg-warning">
+                <div class="text-center">
+                    <h5>Emloyee Details</h5>
+                </div>
+            </div>
+        <div class="card-body">
+            <div class="row pt-2 d-flex justify-content-center">
+                <div class="col-md-8">
+                    <table class="table border table-bordered ">
+                        <thead>
+                          <tr>
+                            <td colspan="4"><input type="text" class="form-control" [(ngModel)]="searchBytext" placeholder="Search By ID, Name, Position, Joining Date" name="searchById" id="searchBy" ></td>
+                          </tr>
+                          <tr>
+                            <th><span (click)="sort('Id')" >Id</span></th>
+                            <th><span (click)="sort('EmployeeName')" >Employee Name</span></th>
+                            <th><span (click)="sort('Position')">Position</span></th>
+                            <th><span (click)="sort('JoiningDate')" >Joining Date</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of empArray |search : searchBytext"  >
+                            <td>{{item.empId}}</td>
+                            <td>{{item.empName}}</td>
+                            <td>{{item.position}}</td>
+                            <td>{{item.joiningDate | dateFormat}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
